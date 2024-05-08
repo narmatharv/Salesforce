@@ -200,5 +200,131 @@ From Setup Home, navigate to Objects and Fields → Object Manager → Schema Bu
 
 ```
 
+# DATA SECURITY
+## Control Access Organization
+```
+In Salesforce, data access is controlled at different levels for different users or groups. This ensures that users can only access the data they need. There are four levels of data access:
+
+Organization Level: Controls overall access to the Salesforce platform by managing user authorization, password policies, and login restrictions.
+Object Level: Sets permissions on specific objects, allowing users to view, edit, or delete records within those objects.
+Fields Level: Restricts access to specific fields within objects, even if users have access to the object itself.
+Records Level: Grants access to specific records within objects, allowing users to view or modify only certain records.
 
 
+In Salesforce, administrators have three mechanisms to control access to the organization:
+
+Create and Manage Users:
+Administrators can create and manage users through the Admin Interface. They can add one or multiple users by providing details like name, email address, role, and profile.
+Set Password Policies:
+Password policies determine how passwords are managed in the organization, such as setting password expiry dates and complexity requirements. These policies are customizable and can be managed through the Security settings.
+Restrict Access from IP Address:
+This adds an extra layer of security by allowing access only from specific IP addresses. If a user tries to access the platform from outside the trusted IP range, additional challenge questions may be required for verification. This setting is managed through the Network Access settings.
+```
+
+##  Control Access Objects
+```
+In Salesforce, access to different objects is managed using profiles and permissions. Profiles define the basic permissions for a user's job role, while permission sets grant additional permissions beyond the profile.
+
+USER PROFILES:
+Profiles are created to match specific business functions, like HR or finance.
+Each user is assigned only one profile.
+Profiles control object access, administrative permissions, and general user permissions.
+
+Creating a Profile:
+Profiles can be created by cloning existing ones and customizing them.
+Go to Setup Home → Users → Profiles to create or edit profiles.
+
+Edit Profile:
+Profiles control permissions for both standard and custom objects.
+Object access can be customized using checkboxes.
+
+Assigning a Profile:
+Once created, profiles can be assigned to users.
+Go to Setup Home → Users → Users and edit the user to change their profile.
+In short, profiles define basic permissions for different business functions, while permission sets can grant additional permissions as needed.
+
+PERMISSION SETS:
+permission sets provide additional access to specific objects beyond what is defined in a user's profile. They extend a user's access based on their needs, such as granting access to new custom objects or providing temporary access to specific objects.
+
+Creating a Permission Set:
+Go to Setup Home → Users → Permission Sets and click on the New button to create a new permission set.
+
+Editing Permission Set:
+After creating, edit the permission set and choose Object Settings.
+Customize access levels for each object as needed.
+Permission sets are a flexible way to grant additional access to users without modifying their profile.
+
+```
+
+## Control Access Fields
+```
+field-level security in Salesforce allows us to control a user's access to specific fields of an object. There are two ways to set field-level access:
+
+1. Edit a single permission set or profile: Modify the permission set or profile containing all the fields needing access restriction.
+2. Edit permission on a single field for multiple profiles: Access the object through the schema builder, right-click on the specific field, and choose "Manage Field Permissions" to set permissions for multiple profiles.
+
+For example, to grant edit access to the "DeliverySchedule" field on the "DeliveryLocations" object:
+
+Go to the "CourierObjects" permission set.
+Navigate to Object Settings, select "DeliveryLocations", and click Edit to set permissions.
+Alternatively, to set field permissions for one field across all profiles:
+
+Access the object through schema builder.
+Right-click on the field, choose "Manage Field Permissions", and set permissions for multiple profiles.
+```
+
+## Control Access Records
+```
+Salesforce allows control over access to individual records beyond object and field restrictions. Here's a summary of how it works:
+
+1. Record Ownership: Each record in Salesforce has an owner, and access to the record is determined by the owner's profile.
+2. Restriction Mechanism: Access to records is controlled at multiple levels (object, field, and record). If there's a conflict between access levels, the more restrictive setting applies.
+3. Record Sharing Mechanism:
+    1.Organization-wide defaults: Set minimal access levels for all users, with customization for additional records through role hierarchies, sharing rules, and manual sharing.
+    2.Types of Organization-wide Defaults: Public Read/Write, Public Read Only, Private, and Controlled by Parent.
+    3. Manual Sharing: Record owners manually grant read and edit permissions to specific users or groups, a process done individually for each user profile.
+```
+
+## Create a Role Hierarchy
+```
+Role hierarchy in Salesforce controls data access based on users' job roles. It ensures that managers have access to records owned by their subordinates, while subordinates don't have access to their managers' records. Here's how to define a role hierarchy:
+
+Accessing Role Hierarchy:
+Go to Setup Home → Users → Roles → Setup Roles.
+Defining Roles:
+Add roles to the hierarchy by filling in details like role name and access level (view or edit opportunities).
+Assigning Users:
+Assign users to roles by selecting them from a list and adding them to the appropriate role.
+By organizing roles within the hierarchy and assigning users accordingly, data access is controlled based on users' roles in the organization.
+```
+
+##  Define Sharing Rules
+```
+Sharing rules in Salesforce are used to grant access to specific data to users who wouldn't otherwise have access due to their roles. Here's how to create sharing rules:
+
+Create Public Group:
+ Go to Setup Home → Users → Public Groups → New Group.
+ Fill in details and choose the users who need access.
+ Check "Grant access using Hierarchies" for inherited access.
+ Click Save.
+
+Create Sharing Rule:
+ Go to Setup Home → Security → Sharing settings.
+ Choose the object (e.g., Campaigns) for which you want to create a sharing rule.
+ Click New under the object's sharing rules.
+ Define criteria for access (e.g., based on a field value).
+ Save the sharing rule.
+Now, all users in the public group will have access to the specified records based on the criteria defined in the sharing rule.
+```
+
+# Process Builder
+## Automate Business Processes
+```
+With the Process Builder you can easily automate everything from daily tasks, like approvals and follow-up emails, to more complex processes, like order renewals and new-hire onboarding.
+The Process Builder tool in Salesforce automates business processes by following these three steps:
+
+Select an Object: Choose the object to start the process, such as "Delivery Schedule".
+Add Criteria: Define conditions that allow the process to execute, like updating the delivery date.
+Add Action: Specify actions to trigger when the criteria are met, such as creating a record to track delivery completion.
+With Process Builder, you can automate tasks and streamline processes, like creating records when courier deliveries are completed, making operations more efficient.
+```
