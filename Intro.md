@@ -328,3 +328,115 @@ Add Criteria: Define conditions that allow the process to execute, like updating
 Add Action: Specify actions to trigger when the criteria are met, such as creating a record to track delivery completion.
 With Process Builder, you can automate tasks and streamline processes, like creating records when courier deliveries are completed, making operations more efficient.
 ```
+## Importing Data
+```
+Salesforce provides a robust platform for data manipulation. We can Insert, View, Edit and Delete the relevant data with proper user permissions. At times, we need to add a large number of records to the respective Saleforce object in one go. Most likely these records have come from another source. The format of the incoming data has to match with the format in which the salesforce object is expecting it.
+
+The import feature is available with CSV file structures from four sources. The sources are CSV, Outlook CSV, ACT! CSV and GMail CSV. In the example given below, we will use the normal csv file for importing data to the Salesforce platform.
+
+1. Navigate to Data Import Wizard:
+   Go to Setup Home → Data → Data Import Wizard.
+   Launch the wizard and choose the object (e.g., Accounts and Contacts) to which you want to import data.
+2. Choose File and Options:
+   Select the CSV file containing the data.
+   Choose to add new records, update existing ones, or both.
+   Specify fields for matching existing records.
+3. Map Field Names:
+   Match incoming field names with Salesforce field names.
+   Complete mapping and start the import.
+```
+
+## Exporting Data
+```
+You can choose the objects from which data needs to be exported and also schedule a regular export form those objects. There is also a filtering option on how much data to export based on the age of the record.
+exporting data from Salesforce involves these steps:
+
+1. Navigate to Data Export:
+   Go to Setup Home → Data → Data Export.
+   Schedule an export by specifying frequency, start and end dates.
+2. Choose Salesforce Objects:
+   Select the Salesforce objects whose data you want to export by checking the corresponding checkboxes.
+3. Wait for Data Export:
+   After selecting objects, wait for the exported data to be ready for download.
+   Download links will appear once the export is complete, or a download link will be sent to the specified email address.
+```
+
+## Reports
+```
+Creating reports in Salesforce is not a very complicated process. The reports are created on top of one or more Salesforce objects. It has the flexibility of applying filters and joining data sets to create sophisticated reports. The interface is called the Report builder.
+Creating reports in Salesforce involves these steps:
+
+Access Report Builder:
+Go to the Reports icon in the left sidebar of the Lightning Experience Home Page.
+Click on "Create New Report".
+Choose Report Object:
+Select the Salesforce object(s) on which the report will be based, such as "Accounts".
+Define Report Settings:
+Choose display options like "My Accounts" to show records owned by the report creator.
+Set filters, such as date ranges or specific field values.
+Apply Filters:
+Add filters to refine the report data, such as filtering by state or province.
+```
+
+## Dashboards
+```
+Dashboards provide more insights than reports as they combine the data from many reports and show a summarized result. Looking at many reports at a time gives the flexibility of combining the results from them quickly. Also summaries in dashboards help us decide on action plans quicker. The dashboards can contain charts, graphs and Tabular data.
+Creating a dashboard in Salesforce involves these steps:
+
+1. Access Dashboard Builder:
+   Click on the Dashboard button on the left menu bar in the Salesforce Home Page.
+   Select "New Dashboard" and provide a name and description.
+2. Add Components:
+   Choose the reports or data sets to include in the dashboard.
+   Select the type of component, such as charts or graphs, for each report.
+3. Customize Layout:
+   Arrange the components on the dashboard layout as desired.
+   Resize components for better visibility and organization.
+```
+
+## Using Formula Fields
+```
+Let's consider a scenario in a company's Salesforce CRM where they manage sales opportunities. Each opportunity has a "Deal Amount" field representing the potential value of the deal. Now, the company wants to calculate a commission amount based on the deal amount, but they also want to apply different commission rates depending on certain conditions.
+
+For example:
+
+If the deal amount is less than $10,000, the commission rate is 5%.
+If the deal amount is between $10,000 and $50,000, the commission rate is 7%.
+If the deal amount is greater than $50,000, the commission rate is 10%.
+To achieve this, they can create a formula field called "Commission Amount" on the Opportunity object. This formula field will calculate the commission based on the deal amount and the specified conditions.
+
+we're creating a formula field in the Contact object to display the Account Number associated with each contact.
+
+Step 1:
+Navigate to Setup Home → Object Manager → Contact.
+Scroll down to the Fields and Relationships tab and click New.
+Choose Formula as the data type and click Next.
+Choose the return type as Text and fill in the Field Name and Field Label.
+
+Step 2:
+Click Next to proceed to the next window.
+Select the Account Number field from the Account object.
+Click Insert to insert this field into the formula.
+
+Step 3:
+Review the formula field configuration and click Save.
+This formula field will now display the Account Number associated with each contact based on the relationship between Contact and Account objects.
+```
+
+## Visualforce Pages
+```
+Visualforce pages are like webpages within Salesforce, created using a special markup language. They're used to access, display, and update data within the organization. Each tag corresponds to a user interface component, like a page section or a field.
+
+To create a Visualforce page:
+
+Navigate to developer console → File → New → Visualforce page.
+Name the page (e.g., HelloworldPage) and write the code.
+Save the page and click Preview to see the result.
+To add components:
+
+Use tags to add components like blocks and sections to the page.
+Edit the code accordingly and preview the changes.
+Preferences can be set for easier navigation:
+
+Go to Help → Preferences to access various settings.
+```
