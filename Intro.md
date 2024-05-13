@@ -423,20 +423,196 @@ Review the formula field configuration and click Save.
 This formula field will now display the Account Number associated with each contact based on the relationship between Contact and Account objects.
 ```
 
+# VISUALFORCE
 ## Visualforce Pages
 ```
 Visualforce pages are like webpages within Salesforce, created using a special markup language. They're used to access, display, and update data within the organization. Each tag corresponds to a user interface component, like a page section or a field.
+Let's say you're a sales manager at a company that uses Salesforce to track leads, contacts, and opportunities. You want to create a custom webpage within Salesforce to display important sales data in a visually appealing way.
 
 To create a Visualforce page:
-
 Navigate to developer console → File → New → Visualforce page.
 Name the page (e.g., HelloworldPage) and write the code.
 Save the page and click Preview to see the result.
-To add components:
 
+To add components:
 Use tags to add components like blocks and sections to the page.
 Edit the code accordingly and preview the changes.
 Preferences can be set for easier navigation:
 
 Go to Help → Preferences to access various settings.
+```
+
+## Variables and Formulas
+```
+The data from the Salesforce objects can be brought into the Visualforce page using variables and expressions. Like other normal programming language, the Visualforce language has expressions, operators and literals, etc. The basic building block of this language is expressions.
+
+The syntax of a Visualforce expression is as below.
+
+{! expression }
+Example:
+Let us use the global variable $user. We can write the following code to get the username, First name and login name.
+<apex:page>
+
+    <h2>Welcome, {! $User.FirstName }!</h2>
+
+    <p>Your username is: {! $User.Username }</p>
+
+    <p>Your organization name is: {! $Organization.Name }</p>
+
+    <p>The current date and time is: {! NOW() }</p>
+
+    <p>Your age is: {! YEAR(TODAY()) - YEAR($User.Birthdate) }</p>
+
+</apex:page>
+```
+
+## Standard Controllers
+```
+Visualforce follows the Model-View-Controller (MVC) architecture, where controllers interact with the database to retrieve and manipulate data, and the view (the Visualforce page) presents the data to the user. Here's how it works:
+
+Model: The model represents the data and business logic of the application. In Visualforce, the model typically consists of Salesforce objects and their corresponding fields.
+View: The view is the user interface that displays the data to the user. In Visualforce, the view is created using Visualforce markup language to design the layout and structure of the webpage.
+Controller: The controller is responsible for handling user input, processing requests, and interacting with the database. In Visualforce, controllers are Apex classes that contain the logic for retrieving and manipulating data.
+To display specific records or groups of records on a Visualforce page, you typically need the record ID(s). In integrated scenarios where Visualforce pages are connected to other Salesforce components, such as standard or custom controllers, the record ID can be passed automatically.
+
+However, in standalone Visualforce pages, you may need to manually specify the record ID to view the data. This can be done by passing the record ID as a parameter in the URL or by using Apex code to query for the record(s) based on certain criteria.
+
+For example, if you want to display details of a specific account with ID "001XXXXXXXXXXXX", you could create a Visualforce page with a controller that queries for that account:
+```
+
+## Records, Fields and Tables
+```
+We have already seen how to get the values of a record using the standard controller. But we can also display the field values in a more formatted way by using additional controllers.
+we will see how to display the fields of an object and the data of a details table in a Master-detail relation.
+
+Display Fields
+When we want to display the fields of a record in a formatted manner with column headers, rather than just the labels and values, we can use the OutputField option. The code given below shows the apex program to display the filled data from Contact. As you can see, we do not need the labels to be in place to indicate the field values.
+
+Display Tables
+We can display all the records of a details table by taking a value from a master table. For example, we can display all the contacts associated with an account. In such case, we use the iteration component which in our case is the contacts table linked to account. Below is the code to display all the contacts associated with the Account table.
+````
+
+## Using Forms
+```
+In Salesforce, creating input forms for viewing and editing data is essential, and Visualforce pages allow us to accomplish this. Let's break down the steps to create a basic input form and then enhance it for better alignment and readability:
+
+Creating Basic Input Form:
+Open Visualforce Page: Navigate to Developer Console → File → New → Visualforce Page.
+Write Code: Write the Visualforce code to create a basic input form. Here's an example using Contact as the standard controller for editing Name, Email, and Phone fields:
+
+<apex:page standardController="Contact">
+    <apex:form>
+        <apex:pageBlock title="Edit Contact">
+            <apex:pageBlockSection>
+                <apex:inputField value="{!Contact.Name}"/>
+                <apex:inputField value="{!Contact.Email}"/>
+                <apex:inputField value="{!Contact.Phone}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons>
+                <apex:commandButton action="{!save}" value="Save"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
+Result: Upon running the code, you'll see a form with fields aligned in multiple columns.
+
+Enhancing Form Alignment:
+To improve readability and alignment, you can modify the Visualforce code to place all fields in a single column within a section block:
+
+<apex:page standardController="Contact">
+    <apex:form>
+        <apex:pageBlock title="Edit Contact">
+            <apex:pageBlockSection>
+                <apex:pageBlockSectionItem>
+                    <apex:outputLabel value="Name"/>
+                    <apex:inputField value="{!Contact.Name}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem>
+                    <apex:outputLabel value="Email"/>
+                    <apex:inputField value="{!Contact.Email}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem>
+                    <apex:outputLabel value="Phone"/>
+                    <apex:inputField value="{!Contact.Phone}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons>
+                <apex:commandButton action="{!save}" value="Save"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
+Result:
+Upon running this modified code, you'll see the fields aligned in a single column, improving the form's readability and aesthetics.
+
+These steps demonstrate how to create and enhance input forms using Visualforce in Salesforce.
+````
+
+## what is Visualforce?
+```
+Visualforce is a markup language used in Salesforce for building custom user interfaces. It allows developers to create web pages with dynamic content and interactions tailored to specific business needs. Here's a concise example:
+
+<apex:page standardController="Account">
+    <apex:form>
+        <apex:pageBlock title="Account Details">
+            <apex:pageBlockSection>
+                <apex:outputField value="{!Account.Name}"/>
+                <apex:outputField value="{!Account.Industry}"/>
+                <apex:outputField value="{!Account.Type}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
+In this example:
+
+<apex:page> defines a Visualforce page.
+standardController="Account" specifies that this page is associated with the Account standard controller.
+<apex:form> encloses the form elements.
+<apex:pageBlock> creates a section with a title.
+<apex:pageBlockSection> organizes fields within the page block.
+<apex:outputField> displays fields from the Account object, such as Name, Industry, and Type.
+When this Visualforce page is viewed in Salesforce, it will render an interface showing the Account details with the specified fields.
+```
+
+## List Controllers
+```
+At times, we need to view a given set of records from a Salesforce object by applying filter criteria. This is achieved by using list controllers which allow you to create Visualforce pages that can display or act on a set of records. The standard list controllers can be used in the following set of objects.
+
+Account
+Asset
+Campaign
+Case
+Contact
+Contract
+Idea
+Lead
+Opportunity
+Order
+Solution
+User
+Custom objects
+Example
+We take the example of contact object. We fetch the records from this object and display it using list controllers. To achieve this, we create an apex page with the following code. The code creates a pageblock with column values matching the column names of the contact object.
+
+```
+
+## Static Resources
+```
+The user interface in a Visualforce base can display dynamic content the value of which keeps changing based on user responses. But there are times when we need some content which should not change with the change in values of other components in the page. For example, an image file may be required to remain constant. Such content which cannot be changed in a page is known as a static resource.
+
+Following are a few static resources in Salesforce −
+
+Images
+Javascript Files
+Flash files
+CSS files
+
+Steps to create static resource:
+ 1.Create a Static Resource Container:
+ Navigate to Develop → Static Resources.
+ Specify a name, description, and file location for the static resource.
+ 2.Upload a Static Resource:
+ Save the settings to attach the file to the User Interface controller.
+ 3.Reference the Static Resource:
+ Write Apex code to reference the static object created above.
 ```
