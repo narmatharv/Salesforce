@@ -135,3 +135,147 @@ You can customize list views to show specific fields, filter records, and sort t
 For example, you could create a list view that shows only "Hot Leads" or sorts opportunities by their close date.
 In a nutshell, Lightning customization lets you tweak how Salesforce looks and works to match how your team works best. You can rearrange page layouts, create different versions of records, add handy buttons and links, and customize how lists of records are shown. It's all about making Salesforce work better for you!
 ````
+
+## Lightning Apps & App Manager
+```
+App Launcher:
+The App Launcher is a centralized menu within the Salesforce platform that provides users with quick access to various applications and tools.
+It serves as a hub where users can discover and launch different Salesforce apps, including standard and custom ones, from a single location.
+Users can navigate to the App Launcher to find the specific app they need for their tasks, enhancing productivity and efficiency in accessing Salesforce functionalities.
+eg: The App Launcher is like your phone's home screen, where you can see all your apps at once.
+
+App Manager:
+The App Manager is a Salesforce administrative tool that enables system administrators to manage, create, and configure applications within the organization.
+It provides administrators with the ability to view all installed apps, including standard and custom ones, and to perform actions such as creating new apps, editing existing ones, and assigning permissions.
+Through the App Manager, administrators can control app settings, access permissions, and visibility settings to ensure that the right users have access to the appropriate applications.
+eg: The App Manager is like the boss of your apps. It's where you go to organize, create, and manage all your apps.
+
+App Builder:
+The App Builder is a visual development tool in Salesforce that allows users to design and customize their own applications without writing code.
+It provides a drag-and-drop interface for assembling components, such as standard and custom objects, fields, and Lightning components, to create custom app pages and user interfaces.
+With the App Builder, users can tailor the layout, functionality, and appearance of their applications to meet specific business requirements, providing flexibility and customization capabilities.
+eg: The App Builder is like a LEGO set where you can build your own custom apps.
+It's a tool in Salesforce that lets you create new apps or customize existing ones by dragging and dropping different components, like building blocks, to design how they look and work.
+
+User Interface:
+The User Interface (UI) refers to the visual presentation and interaction design of the Salesforce platform, encompassing how users perceive and interact with the system.
+It includes elements such as layout, navigation menus, buttons, forms, and visual styling, all designed to optimize user experience and usability.
+Salesforce aims to provide an intuitive and user-friendly UI that enables users to navigate, interact, and accomplish tasks efficiently within the platform, enhancing productivity and user satisfaction.
+eg: The User Interface is like the way your room is set up, with everything arranged to make it easy for you to use.
+````
+
+## Security Model
+```
+Org Level Security:
+Org level security refers to the overall security settings and controls applied at the organization level in Salesforce.
+It includes features such as user authentication, password policies, IP restrictions, and session settings to ensure the security of the entire Salesforce instance.
+System administrators configure org level security settings to establish a secure foundation for user access and data protection within the organization.
+
+Object and Field Level Security:
+Object and field level security involves controlling access to specific objects (e.g., accounts, contacts) and fields within those objects.
+Salesforce administrators can set permissions to determine which users or profiles can view, create, edit, or delete records for each object.
+Additionally, administrators can specify field-level security to control access to individual fields within objects, ensuring sensitive data is protected from unauthorized access.
+
+Record Level Security:
+Record level security focuses on controlling access to individual records based on criteria such as ownership, sharing rules, and criteria-based sharing.
+Salesforce offers various mechanisms, such as role hierarchy, sharing rules, manual sharing, and criteria-based sharing, to grant or restrict access to records based on user roles, teams, or specific conditions.
+Record level security ensures that users only have access to the records they are authorized to view or modify, maintaining data privacy and confidentiality.
+
+Tracking and Auditing Tools:
+Salesforce provides tracking and auditing tools to monitor user activity, changes to data, and system events for security and compliance purposes.
+Features such as audit trails, field history tracking, login history, and event monitoring allow administrators to track user actions, data modifications, and login activities.
+These tools enable organizations to maintain visibility into user behavior, detect security threats or unauthorized activities, and maintain compliance with regulatory requirements.
+
+In summary, the security model in Salesforce encompasses various layers of security controls, including org level settings, object and field level permissions, record level access, and tracking and auditing capabilities, to ensure the confidentiality, integrity, and availability of data within the organization.
+```
+
+## Data Analytics
+```
+Data analytics is the process of examining large sets of data to uncover patterns, trends, correlations, and insights. It involves collecting, cleaning, analyzing, and interpreting data to gain a better understanding of business performance, customer behavior, market trends, and other relevant factors.
+By using various analytical techniques, tools, and technologies, organizations can derive actionable insights from data to support decision-making, improve operations, optimize strategies, and drive business growth.
+
+Report:
+In the context of data analytics, a report is a structured document or presentation that provides a summary, analysis, and visualization of data findings. It presents information in a clear, concise, and meaningful format, often using tables, charts, graphs, and other visual elements to convey key insights.
+Reports enable stakeholders to access and understand data-driven insights, track progress towards goals, identify areas for improvement, and make informed decisions based on evidence and analysis.
+eg:Imagine you're writing a report about your favorite book. You'd include details like the plot, characters, and themes. In Salesforce, reports do the same thing but with business data, like sales numbers or customer information.
+
+Dashboard:
+A dashboard is a visual display of key performance indicators (KPIs), metrics, and data trends presented in a graphical format. It provides users with a real-time, interactive snapshot of important business metrics and performance indicators.
+Dashboards typically consist of multiple widgets, such as charts, graphs, gauges, and tables, organized on a single screen or webpage. Users can customize dashboards to focus on specific metrics or areas of interest, allowing for quick and intuitive monitoring of business performance and trends.
+eg: Weather Dashboard Example:
+Imagine you have a weather dashboard on your phone. Here's what it might include:
+Current Weather:
+A widget shows the current temperature, weather conditions (like sunny or rainy), and wind speed for your location.
+Hourly Forecast:
+A graph or table displays the hourly forecast for the day, showing how temperatures will change throughout the day.
+```
+
+### Data Import & Export:
+```
+Overview:
+Data import and export is like moving things in and out of a box. You might put things into the box when you're organizing, and take things out when you need them elsewhere.
+In computer terms, it's about transferring information from one place to another. This could be moving data into a system, like adding new contacts to your address book, or getting data out of a system, like saving a document to your computer.
+
+Tools:
+There are special tools or methods for importing and exporting data in computer systems. These tools help make the process easier and more efficient.
+For importing data, you might use tools like data loaders or import wizards to bring information into a system from files or other sources.
+For exporting data, you might use tools like reports or data exports to extract information from a system and save it in a usable format.
+
+Recycle Bin:
+The recycle bin is like a safety net for your data. When you delete something, like a file or record, it doesn't disappear right away.
+Instead, it goes into the recycle bin where it's stored temporarily. If you realize you made a mistake, you can retrieve the deleted item from the recycle bin and put it back where it belongs.
+This helps prevent accidental data loss and gives you a chance to recover things you didn't mean to delete.
+```
+
+## Email Management:
+```
+Overview:
+Email management involves the organization, administration, and optimization of email communication within an organization or personal context.
+It encompasses various processes and practices aimed at efficiently handling incoming and outgoing emails, ensuring timely responses, and maintaining effective communication channels.
+
+Email Template:
+An email template is a pre-designed and pre-formatted layout or framework used for creating standardized and consistent email messages.
+Templates typically include placeholders for dynamic content, such as recipient names or personalized greetings, allowing users to quickly compose and send emails without starting from scratch.
+Organizations often use email templates for common communication scenarios, such as customer inquiries, marketing campaigns, or internal announcements, to ensure branding consistency and streamline message creation.
+
+Email Alert:
+An email alert is a notification sent via email to inform recipients about specific events, actions, or conditions that require their attention.
+Alerts are typically triggered by predefined criteria or rules, such as changes in system status, critical errors, or important updates.
+Organizations use email alerts to notify stakeholders, employees, or customers about urgent or time-sensitive matters, enabling prompt response and action.
+
+In summary, email management involves the effective handling and administration of email communication, including the use of email templates for standardized messaging and email alerts for timely notifications of important events or actions. These practices help streamline communication processes and ensure efficient email correspondence within organizations.
+```
+
+## Automation Process: Basics:
+```
+Overview:
+Automation processes in Salesforce are mechanisms designed to streamline and simplify repetitive tasks, workflows, and business processes.
+By automating routine activities, organizations can improve efficiency, accuracy, and productivity within their Salesforce environment.
+
+Formula:
+In Salesforce, a formula is a logical expression or calculation used to automatically derive values or perform calculations.
+Formulas can be applied to various areas within Salesforce, such as fields, validation rules, workflow rules, and reports.
+For example, a formula field in Salesforce can calculate the total value of a deal based on the quantity and unit price of products, providing users with real-time insights without manual input.
+
+Automation Rules in Salesforce:
+Automation rules in Salesforce are predefined conditions and actions that automate responses or processes within the platform.
+Common types of automation rules in Salesforce include workflow rules, process builder, and approval processes.
+Workflow rules define criteria and actions to automatically update records, send email alerts, or trigger tasks based on specified conditions.
+Process Builder is a point-and-click tool that allows users to define more complex automation processes involving multiple steps and actions.
+Approval processes automate the approval of records, such as deals or expense reports, by routing them to designated approvers based on predefined criteria.
+In summary, automation processes in Salesforce leverage formulas and automation rules to automate tasks, calculations, and decision-making processes, enhancing efficiency and productivity within the Salesforce environment.
+```
+
+## Automation Process: Workflow
+```
+**Overview**:
+   - Workflow in automation refers to a series of predefined steps or rules that automate and streamline business processes within a system or application.
+   - It involves the automated execution of tasks, notifications, or approvals based on specified criteria or triggers, eliminating manual intervention and improving efficiency.
+
+**Actions**:
+   - Actions within a workflow are the individual steps or operations performed automatically when specific conditions are met.
+   - These actions can include tasks such as updating records, sending email notifications, assigning tasks to users, or triggering other automated processes.
+   - Each action is defined within the workflow rules to achieve specific objectives and streamline business processes effectively.
+
+In summary, workflow automation involves the systematic execution of predefined steps or rules to automate business processes, while actions within the workflow represent the specific tasks or operations performed automatically to achieve desired outcomes.
+```
